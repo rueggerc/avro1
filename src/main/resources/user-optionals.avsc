@@ -1,0 +1,9 @@
+{"namespace": "com.rueggerllc.avro",
+ "type": "record",
+ "name": "UserWithOptionals",
+ "fields": [
+     {"name": "name", "type": "string"},
+     {"name": "favorite_number",  "type": ["int", "null"]},
+     {"name": "favorite_color", "type": ["string", "null"]}
+ ]
+}

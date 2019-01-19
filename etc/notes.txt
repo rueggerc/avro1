@@ -1,0 +1,72 @@
+
+https://www.baeldung.com/java-apache-avro
+
+Data Types Supported
+====================
+All Primitive Types
+  e.g. {"type":"string"}
+
+Complex Types
+	records
+	enums
+	arrays
+	maps
+	unions
+	fixed
+	
+Example Schema:
+===============
+{
+   "type":"record",
+   "name":"ClientIdentifier",
+   "namespace":"com.baeldung.avro",
+   "fields":[
+      {
+         "name":"hostName",
+         "type":"string"
+      },
+      {
+         "name":"ipAddress",
+         "type":"string"
+      }
+   ]
+}
+
+
+	
+Schema Creation:
+================
+Schema Attributes:
+	Type
+	Namespace
+	Name
+	Fields
+	
+Steps:
+================
+Schema Creation: (Write JSON by Hand or use SchemaBuilder())
+Reading the Schema (Generate AVRO classes - Programmatically or Maven plugin)
+Serialize the Data
+Deserialize the Data
+
+Schema Creation
+===============
+1. Write Schema JSON Manually
+2. SchemaBuider (better way)
+
+Generate AVRO Classes
+=====================
+Programmatically or Maven Plugin
+
+Serialize Data
+==============
+Two Formats:
+	JSON Format
+	Binary Format
+	
+
+
+
+
+
+	

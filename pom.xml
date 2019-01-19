@@ -1,0 +1,90 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.rueggerllc</groupId>
+	<artifactId>avro1</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>AVRO 1</name>
+	<description>Learn AVRO</description>
+  
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<compiler-plugin.version>3.5</compiler-plugin.version>
+		<avro.version>1.8.2</avro.version>
+		<java.version>1.8</java.version>
+		<slf4j.version>1.7.25</slf4j.version>
+	</properties>
+  
+  <dependencies>
+  
+	<dependency>
+      <groupId>org.apache.avro</groupId>
+      <artifactId>avro-compiler</artifactId>
+      <version>1.8.2</version>
+	</dependency>
+	
+	<dependency>
+      <groupId>org.apache.avro</groupId>
+      <artifactId>avro-maven-plugin</artifactId>
+	  <version>1.8.2</version>
+    </dependency>
+    
+	<dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+	  <version>4.12</version>
+	  <scope>test</scope>
+    </dependency>
+    
+	<dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+	  <version>1.2.17</version>
+    </dependency>
+    
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-simple</artifactId>
+		<version>${slf4j.version}</version>
+		<scope>compile</scope>
+	</dependency>
+    
+    <dependency>
+  	  <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.8.5</version>
+    </dependency>
+    
+  </dependencies>
+  
+  <build>
+	  <plugins>
+	    <plugin>
+	      <groupId>org.apache.avro</groupId>
+	      <artifactId>avro-maven-plugin</artifactId>
+	      <version>${avro.version}</version>
+	        <executions>
+	            <execution>
+	                <id>schemas</id>
+	                <phase>generate-sources</phase>
+	                <goals>
+	                    <goal>schema</goal>
+	                    <goal>protocol</goal>
+	                    <goal>idl-protocol</goal>
+	                </goals>
+	                <configuration>
+	                    <sourceDirectory>${project.basedir}/src/main/resources/</sourceDirectory>
+	                    <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
+	                </configuration>
+	            </execution>
+	        </executions>
+	    </plugin>  
+	  </plugins>
+  </build>
+  
+  
+  
+  
+  
+  
+</project>
